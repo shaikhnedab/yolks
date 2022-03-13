@@ -3,11 +3,11 @@ FROM        ubuntu:20.04
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
 RUN apt update  \
-    && apt -y clean \
-    && adduser --disabled-password --home /home/container container
+    && apt -y clean 
 
-USER container
-ENV  USER=container HOME=/home/container
+USER root
+
+ENV  USER=root HOME=/home/container
 
 WORKDIR /home/container
 
