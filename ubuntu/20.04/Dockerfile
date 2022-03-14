@@ -4,7 +4,7 @@ LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
 RUN apt update  \
     && apt -y clean \
-	&& apt -y install iproute2 ca-certificates
+	&& apt -y install iproute2 ca-certificates \
     && adduser --disabled-password --home /home/container container
 
 USER root
