@@ -6,10 +6,10 @@ ENV TZ=Asia/Kolkata \
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
 RUN apt update  \
+	&& apt install -y tzdata
     && apt -y clean \
 	&& apt -y install iproute2 ca-certificates \
     && adduser --disabled-password --home /home/container container
-	&& apt install -y tzdata
 
 USER root
 ENV  USER=root HOME=/home/container
