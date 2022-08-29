@@ -1,9 +1,5 @@
 FROM        ubuntu:20.04
 
-ARG DEBIAN_FRONTEND=noninteractive \
-ENV TZ=Asia/Kolkata apt-get \
-RUN apt-get install -y tzdata \
-
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
 RUN apt update  \
