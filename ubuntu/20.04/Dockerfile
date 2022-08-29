@@ -1,6 +1,8 @@
 FROM        ubuntu:20.04
 
-RUN DEBIAN_FRONTEND=noninteractive TZ=Asia/Kolkata apt-get -y install tzdata \
+ARG DEBIAN_FRONTEND=noninteractive \
+ENV TZ=Asia/Kolkata apt-get \
+RUN apt-get install -y tzdata \
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
