@@ -9,9 +9,10 @@ node -v
 # Print NPM Version
 npm -v
 # Print Python Version
-python --version
-python3 --version
 python3.9 --version
+# Print PIP Version
+pip --version
+pip3 --version
 # Install Python Requirements
 pip install -r requirements.txt
 # Build NPM Packages
