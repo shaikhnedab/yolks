@@ -11,7 +11,7 @@ npm -v
 # Print Python Version
 python3.9 --version
 # Print PIP Version
-python3.9 pip --version
+python3.9 -m pip --version
 # Install Python Requirements
 python3.9 -m pip install -r requirements.txt
 # Build NPM Packages
