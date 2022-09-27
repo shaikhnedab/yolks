@@ -15,6 +15,7 @@ python3.9 -m pip --version
 # Install Python Requirements
 python3.9 -m pip install -r requirements.txt
 # Build NPM Packages
+npm install -g gamedig
 npm run build
 
 # Replace Startup Variables

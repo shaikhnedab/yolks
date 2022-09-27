@@ -12,8 +12,8 @@ RUN apt update  \
 	&& apt install -y python3-pip \
     && adduser --disabled-password --home /home/container container
 
-USER root
-ENV  USER=root HOME=/home/container
+USER container
+ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 
