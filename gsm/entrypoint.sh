@@ -4,6 +4,8 @@ cd /home/container
 # Make internal Docker IP address available to processes.
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
+npm -g config set user root
+
 # Print Node.js Version
 node -v
 # Print NPM Version
@@ -15,7 +17,8 @@ python3.9 -m pip --version
 # Install Python Requirements
 python3.9 -m pip install -r requirements.txt
 # Build NPM Packages
-npm install -g gamedig
+
+npm install --quiet --no-progress --unsafe-perm -g gamedig
 npm run build
 
 # Replace Startup Variables
