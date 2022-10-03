@@ -1,4 +1,4 @@
-FROM        ubuntu:20.04
+FROM        nikolaik/python-nodejs:python3.9-nodejs16
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
@@ -16,6 +16,9 @@ USER container
 ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
+
+RUN npm install -g gamedig
+RUN python -m pip install -r requirements.txt
 
 COPY ./entrypoint.sh /entrypoint.sh
 
