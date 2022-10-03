@@ -6,14 +6,14 @@ RUN apt update  \
     && apt -y clean \
     && apt install -y iproute2 \
     && apt install -y curl \
-    && adduser --disabled-password --home /home/container container
+    && adduser --disabled-password --home /home/container root
 
-USER container
-ENV  USER=container HOME=/home/container
+USER root
+ENV  USER=root HOME=/home/container
 
 WORKDIR /home/container
 
-RUN npm install --quiet --no-progress --unsafe-perm -g gamedig
+RUN npm install -g gamedig
 RUN python -m pip install -r requirements.txt
 
 COPY ./entrypoint.sh /entrypoint.sh
