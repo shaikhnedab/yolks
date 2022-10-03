@@ -15,11 +15,11 @@ python3.9 --version
 # Print PIP Version
 python3.9 -m pip --version
 # Install Python Requirements
-#python3.9 -m pip install -r requirements.txt
+python3.9 -m pip install -r requirements.txt
 # Build NPM Packages
 
 #npm install --quiet --no-progress --unsafe-perm -g gamedig
-#npm run build
+npm run build
 
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')
