@@ -1,4 +1,4 @@
-FROM        nikolaik/python-nodejs:python3.9-nodejs16
+FROM        ubuntu:20.04
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
@@ -6,15 +6,17 @@ RUN apt update  \
     && apt -y clean \
     && apt install -y iproute2 \
     && apt install -y curl \
-    && adduser --disabled-password --home /home/container root
+	&& curl -sL https://deb.nodesource.com/setup_16.x | bash - \
+	&& apt install -y nodejs \
+	&& apt install -y python3.9 \
+	&& apt install -y python3-pip \
+	&& npm install -g gamedig \
+    && adduser --disabled-password --home /home/container container
 
-USER root
-ENV  USER=root HOME=/home/container
+USER container
+ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
-
-RUN npm install -g gamedig
-RUN python -m pip install -r requirements.txt
 
 COPY ./entrypoint.sh /entrypoint.sh
 
