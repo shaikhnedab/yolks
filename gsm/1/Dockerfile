@@ -13,7 +13,7 @@ ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 
-RUN npm install -g gamedig
+RUN npm install --quiet --no-progress --unsafe-perm -g gamedig
 RUN python -m pip install -r requirements.txt
 
 COPY ./entrypoint.sh /entrypoint.sh
