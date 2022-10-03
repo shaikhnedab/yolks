@@ -1,23 +1,14 @@
-FROM        ubuntu:20.04
+FROM        python3.9-nodejs16-alpine	
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
-RUN apt update  \
-    && apt -y clean \
-    && apt install -y iproute2 \
-    && apt install -y curl \
-	&& curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-	&& apt install -y nodejs \
-	&& apt install -y python3.9 \
-	&& apt install -y python3-pip \
-	&& npm install -g gamedig \
-    && adduser --disabled-password --home /home/container container
+RUN         apk add --update --no-cache ca-certificates curl ffmpeg git openssl sqlite tar tzdata \
+                && npm install -g gamedig
+				&& adduser -D -h /home/container container
 
-USER container
-ENV  USER=container HOME=/home/container
+USER        container
+ENV         USER=container HOME=/home/container
+WORKDIR     /home/container
 
-WORKDIR /home/container
-
-COPY ./entrypoint.sh /entrypoint.sh
-
-CMD ["/bin/bash", "/entrypoint.sh"]
+COPY        ./../entrypoint.sh /entrypoint.sh
+CMD         [ "/bin/ash", "/entrypoint.sh" ]
