@@ -1,4 +1,4 @@
-FROM        nikolaik/python3.9-nodejs16-alpine	
+FROM        nikolaik/python3.9-nodejs16-alpine
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
