@@ -9,7 +9,6 @@ RUN apt update  \
 	&& apt install -y python3-pip \
 	&& curl -sL https://deb.nodesource.com/setup_16.x | bash - \
 	&& apt install -y nodejs \
-	&& npm install -g gamedig \
     && adduser --disabled-password --home /home/container container
 
 USER container
