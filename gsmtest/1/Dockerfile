@@ -1,4 +1,4 @@
-FROM        nikolaik/python-nodejs:python3.8-nodejs16-slim
+FROM        nikolaik/python-nodejs:python3.9-nodejs16-slim
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
