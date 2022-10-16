@@ -2,7 +2,7 @@ FROM        node:16.15.0-alpine
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
-RUN         apk add --update --no-cache nodejs-npm ca-certificates tzdata \
+RUN         apk add --update --no-cache ca-certificates tzdata \
 				&& adduser -D -h /home/container container
 
 USER        container
