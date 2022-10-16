@@ -9,7 +9,7 @@ node -v
 # Print NPM Version
 npm -v
 # Install NPM Packages
-npm i
+# npm i
 
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')
