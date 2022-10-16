@@ -1,26 +1,20 @@
 #!/bin/bash
 cd /home/container
 
-# Default the TZ environment variable to UTC.
-TZ=${TZ:-IST}
-export TZ
-
 # Make internal Docker IP address available to processes.
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
-# Print Todays Date/Time
-date
-# Print Node.js Version
+echo "Node.js Version"
 node -v
-# Print NPM Version
+echo "NPM Version"
 npm -v
-# Print Python Version
+echo "Python Version"
 python3.9 --version
-# Print PIP Version
+echo "PIP Version"
 python3.9 -m pip --version
-# Install Python Requirements
+echo "Install Python Requirements"
 python3.9 -m pip install -r requirements.txt
-# Install NPM Packages
+echo "Install NPM Packages"
 npm install
 
 # Replace Startup Variables
