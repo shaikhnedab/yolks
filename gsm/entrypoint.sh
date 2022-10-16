@@ -8,6 +8,8 @@ export TZ
 # Make internal Docker IP address available to processes.
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 
+# Print Todays Date/Time
+date
 # Print Node.js Version
 node -v
 # Print NPM Version
