@@ -10,7 +10,7 @@ on:
       - g5vapi/**
 jobs:
   push:
-    name: "yolks:ubuntu_${{ matrix.tag }}"
+    name: "yolks:g5vapi_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
