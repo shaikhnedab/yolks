@@ -6,6 +6,7 @@ RUN apt update  \
     && apt -y clean \
 	&& apt -y install iproute2 ca-certificates \
     && apt install -y curl \
+	&& apt install -y gnupg2 \
 	
 	&& curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash \
     && export NVM_DIR="$HOME/.nvm" \
