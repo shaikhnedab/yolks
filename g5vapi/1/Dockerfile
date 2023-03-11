@@ -8,6 +8,7 @@ RUN apt update  \
     && apt install -y curl \
 	
 	&& curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash \
+	&& export NVM_DIR="$HOME/.nvm" \
 	&& nvm install 14.17.5 \
 	
 	&& curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
