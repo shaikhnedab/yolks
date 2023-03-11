@@ -19,8 +19,6 @@ RUN apt update  \
 	&& apt install -y --no-install-recommends yarn \
 	
 	&& apt install -y redis-server \
-	&& service mariadb start \
-	&& service mariadb enable \
 	
     && adduser --disabled-password --home /home/container container
 
