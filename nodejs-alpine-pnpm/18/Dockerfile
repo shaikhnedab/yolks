@@ -5,7 +5,6 @@ LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 RUN         apk add --update --no-cache ca-certificates tzdata \
 			&& adduser -D -h /home/container container
 				
-            && apt -y clean \
 	        && sudo npm install -g pnpm 
 
 
