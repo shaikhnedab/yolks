@@ -9,10 +9,8 @@ echo "Node.js Version"
 node -v
 echo "NPM Version"
 npm -v
-echo "PNPM Version"
-pnpm -v
-echo "PNPM Install Packages"
-pnpm install
+echo "NPM Install Packages"
+npm i
 
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e $(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
