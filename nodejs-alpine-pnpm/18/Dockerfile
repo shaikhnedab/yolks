@@ -5,7 +5,8 @@ LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 RUN         apk add --update --no-cache ca-certificates tzdata \
 			&& adduser -D -h /home/container container
 				
-	        && npm install -g pnpm 
+	        && corepack enable \
+            && corepack prepare pnpm@7.18.0 --activate
 
 
 USER        container
