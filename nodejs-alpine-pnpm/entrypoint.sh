@@ -11,8 +11,6 @@ echo "NPM Version"
 npm -v
 echo "PNPM Version"
 pnpm -v
-echo "PNPM Install Packages"
-pnpm install
 
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e $(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
