@@ -20,7 +20,7 @@
 # SOFTWARE.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH alpine:3.19.1
+FROM        --platform=$TARGETOS/$TARGETARCH node:18.17.1-alpine
 
 LABEL       author="Matthew Penner" maintainer="matthew@pterodactyl.io"
 
@@ -28,5 +28,5 @@ LABEL       org.opencontainers.image.source="https://github.com/pterodactyl/yolk
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apk add --update --no-cache ca-certificates curl git jq wget
-RUN         corepack enable
-RUN         corepack prepare pnpm@7.18.0 --activate
+RUN         apk add --no-cache git
+RUN         npm install -g pnpm
