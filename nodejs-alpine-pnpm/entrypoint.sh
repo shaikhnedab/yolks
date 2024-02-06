@@ -7,8 +7,10 @@ export INTERNAL_IP
 
 echo "yolk Node.js Version"
 node -v
+
 echo "yolk NPM Version"
 npm -v
+
 echo "yolk PNPM Version"
 pnpm -v
 
