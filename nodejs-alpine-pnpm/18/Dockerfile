@@ -4,9 +4,7 @@ LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
 RUN         apk add --update --no-cache ca-certificates tzdata \
 			&& adduser -D -h /home/container container
-				
-	    RUN apk add --no-cache git
-        RUN npm install -g pnpm
+            RUN npm install -g pnpm
 
 
 USER        container
