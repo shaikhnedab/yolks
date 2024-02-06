@@ -22,11 +22,10 @@
 
 FROM        --platform=$TARGETOS/$TARGETARCH node:18.17.1-alpine
 
-LABEL       author="Matthew Penner" maintainer="matthew@pterodactyl.io"
+LABEL       author="Matthew Penner" maintainer="shaikhnedab@gmail.com"
 
 LABEL       org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apk add --update --no-cache ca-certificates curl git jq wget
-RUN         apk add --no-cache git
 RUN         npm install -g pnpm

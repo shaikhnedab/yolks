@@ -5,11 +5,11 @@ cd /home/container
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
 
-echo "Node.js Version"
+echo "yolk Node.js Version"
 node -v
-echo "NPM Version"
+echo "yolk NPM Version"
 npm -v
-echo "PNPM Version"
+echo "yolk PNPM Version"
 pnpm -v
 
 # Replace Startup Variables
