@@ -17,6 +17,7 @@ jobs:
       matrix:
         tag:
           - alpine3.19.1
+          - debian11slim
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-buildx-action@v2
