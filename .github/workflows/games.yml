@@ -10,7 +10,7 @@ on:
       - games/**
 jobs:
   push:
-    name: "yolks:nodejs-alpine_${{ matrix.tag }}"
+    name: "yolks:games:${{ matrix.game }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
