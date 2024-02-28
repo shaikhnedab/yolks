@@ -56,7 +56,7 @@ fi
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
     # Update Source Server
     if [ ! -z ${SRCDS_APPID} ]; then
-        ./steamcmd/steamcmd.sh +force_install_dir /home/container +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} +app_set_config ${HLDS_APPID} mod ${HLDS_MODID} app_update ${HLDS_APPID} validate $( [ "$HLDS_BETA" == "0" ] || printf %s "+app_update ${HLDS_APPID} -beta beta validate" ) +quit
+        ./steamcmd/steamcmd.sh +force_install_dir /home/container +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} +app_set_config ${HLDS_APPID} mod ${HLDS_MODID} +app_update ${HLDS_APPID} validate $( [ "$HLDS_BETA" == "0" ] || printf %s "+app_update ${HLDS_APPID} -beta beta validate" ) +quit
     else
         echo -e "No appid set. Starting Server"
     fi
