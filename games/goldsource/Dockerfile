@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH debian:stable-slim
+FROM        --platform=$TARGETOS/$TARGETARCH debian:8.0
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
