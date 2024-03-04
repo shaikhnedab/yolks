@@ -21,15 +21,17 @@ echo -e ":/home/container$ ${MODIFIED_STARTUP}"
 ## if auto_update is not set or to 1 update
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
     # Update Server
-	    echo "Check for Update"
-		git init -b main
-		git config --global --add safe.directory /mnt/server
-		git pull ${GIT_ADDRESS} ${BRANCH}
-		echo "Install PNPM Dependencies"
-		pnpm install
+	echo "Checking for Update"
+	git init -b main
+	git config --global --add safe.directory /mnt/server
+	git pull ${GIT_ADDRESS} ${BRANCH}
+	echo "Install PNPM Dependencies"
+	pnpm install
 
 else
     echo -e "Not updating the server as auto update was set to 0. Starting Server"
+	echo "Install PNPM Dependencies"
+	pnpm install
 fi
 
 # Run the Server
