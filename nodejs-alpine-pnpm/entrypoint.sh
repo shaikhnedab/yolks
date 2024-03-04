@@ -18,16 +18,5 @@ pnpm -v
 MODIFIED_STARTUP=$(echo -e $(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
 echo -e ":/home/container$ ${MODIFIED_STARTUP}"
 
-## if auto_update is not set or to 1 update
-echo "Check for Update"
-if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
-    # Update Server
-		git init -b main
-		git config --global --add safe.directory /mnt/server
-		git pull ${GIT_ADDRESS} ${BRANCH}
-else
-    echo -e "Not updating the server as auto update was set to 0. Starting Server"
-fi
-
 # Run the Server
 eval ${MODIFIED_STARTUP}
