@@ -20,7 +20,7 @@ echo -e ":/home/container$ ${MODIFIED_STARTUP}"
 
 ## if auto_update is not set or to 1 update
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
-    # Update Source Server
+    # Update Server
 		git init -b main
 		git config --global --add safe.directory /mnt/server
 		git pull ${GIT_ADDRESS} ${BRANCH}
