@@ -24,9 +24,9 @@ if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
 	    echo "Check for Update"
 		git init -b main
 		git config --global --add safe.directory /mnt/server
-		git pull
+		git pull ${GIT_ADDRESS} ${BRANCH}
 		echo "Install PNPM Dependencies"
-		pnpm install
+		pnpm install -f
 
 else
     echo -e "Not updating the server as auto update was set to 0. Starting Server"
