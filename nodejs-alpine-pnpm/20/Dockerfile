@@ -2,7 +2,8 @@ FROM        node:20.11.0-alpine
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
-RUN         apk add --update --no-cache ca-certificates tzdata git \
+RUN         apk add --update --no-cache ca-certificates tzdata \
+			&& apk add --update --no-cache git \
 			&& adduser -D -h /home/container container
             RUN npm install -g pnpm
 
