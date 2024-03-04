@@ -19,6 +19,7 @@ MODIFIED_STARTUP=$(echo -e $(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/
 echo -e ":/home/container$ ${MODIFIED_STARTUP}"
 
 ## if auto_update is not set or to 1 update
+echo "Check for Update"
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
     # Update Server
 		git init -b main
