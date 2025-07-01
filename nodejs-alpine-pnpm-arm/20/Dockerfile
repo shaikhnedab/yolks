@@ -2,8 +2,9 @@ FROM --platform=linux/arm64 node:20.11.0-alpine
 
 LABEL       author="Shaikh Nedab" maintainer="shaikhnedab@gmail.com"
 
-RUN         apk add --update --no-cache ca-certificates tzdata git npm install -g pnpm \
+RUN         apk add --update --no-cache ca-certificates tzdata git \
 			&& adduser -D -h /home/container container
+            && npm install -g pnpm
 
 
 USER        container
