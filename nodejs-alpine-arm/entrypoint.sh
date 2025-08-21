@@ -22,9 +22,6 @@ if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
 		git init -b main
 		git config --global --add safe.directory /mnt/server
 		git pull ${GIT_ADDRESS} ${BRANCH}
-		echo "Install NPM Dependencies"
-		npm install
-
 else
     echo -e "Not updating the server as auto update was set to 0. Starting Server"
 fi
