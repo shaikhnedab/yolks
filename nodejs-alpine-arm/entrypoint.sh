@@ -11,9 +11,6 @@ node -v
 echo "yolk NPM Version"
 npm -v
 
-echo "yolk PNPM Version"
-pnpm -v
-
 # Replace Startup Variables
 MODIFIED_STARTUP=$(echo -e $(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
 echo -e ":/home/container$ ${MODIFIED_STARTUP}"
@@ -25,8 +22,8 @@ if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
 		git init -b main
 		git config --global --add safe.directory /mnt/server
 		git pull ${GIT_ADDRESS} ${BRANCH}
-		echo "Install PNPM Dependencies"
-		pnpm install -f
+		echo "Install NPM Dependencies"
+		npm install
 
 else
     echo -e "Not updating the server as auto update was set to 0. Starting Server"
